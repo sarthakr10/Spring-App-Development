@@ -13,16 +13,30 @@ package com.spring.spring;
 //    }
 //
 //}
-import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
+//import org.springframework.stereotype.Controller;
+//import org.springframework.ui.Model;
+//import org.springframework.web.bind.annotation.GetMapping;
+//
+//@Controller
+//public class HelloController {
+//    @GetMapping("/hello")
+//
+//    public String hello(Model model) {
+//        model.addAttribute("message", "Hello from Sar");
+//        return "hello"; // This will map to hello.html in templates folder
+//    }
+//}
+
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
-@Controller
+@RestController
+@RequestMapping("/api")
 public class HelloController {
-    @GetMapping("/hello")
 
-    public String hello(Model model) {
-        model.addAttribute("message", "Hello from Sar");
-        return "hello"; // This will map to hello.html in templates folder
+    @GetMapping("/hello")
+    public String sayHello() {
+        return "Hello from BridgeLabz";
     }
 }
